@@ -34,15 +34,9 @@ python-docx
 
 Language: Python 3.10+
 
-📂 Project Structure
-├── app.py               # Main Flask application
-├── templates/
-│   └── index.html       # Frontend interface
-├── uploads/             # Uploaded documents (auto-created)
-├── requirements.txt     # Project dependencies
-└── README.md            # Documentation
 
 ⚙️ Setup & Installation
+
 1️⃣ Clone the Repository
 git clone https://github.com/your-username/rag-chatbot.git
 cd rag-chatbot
