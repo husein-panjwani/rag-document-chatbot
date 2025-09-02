@@ -83,20 +83,20 @@ def chunk_text_smarter(text, chunk_size, overlap):
     return chunks
 
 def get_embeddings(texts):
-    """Converts a list of texts into a list of Gemini embeddings."""
+    """Converts a list of texts into a list of Gemini embeddings using batching."""
     try:
-        embeddings = []
-        for text in texts:
-            response = genai.embed_content(
-                model="models/embedding-001",
-                content=text,
-                task_type="retrieval_document"
-            )
-            embeddings.append(response['embedding'])
+        # Gemini allows multiple contents in a single call
+        response = genai.embed_content(
+            model="models/embedding-001",
+            content=texts,
+            task_type="retrieval_document"
+        )
+        embeddings = response['embedding']
         return embeddings
     except Exception as e:
         print(f"Error getting embeddings from Gemini API: {e}")
         return None
+
 
 def store_embeddings(chunks, filename):
     """Converts text chunks into embeddings and stores them in ChromaDB."""
@@ -200,7 +200,7 @@ def upload_file():
         elif text_length < 10000:
             dynamic_chunk_size = 700
         else:
-            dynamic_chunk_size = 500
+            dynamic_chunk_size = 400
 
         dynamic_overlap = int(dynamic_chunk_size * 0.15)
         
