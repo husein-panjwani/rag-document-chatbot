@@ -1,22 +1,8 @@
 PS C:\Users\Equi-PC\Desktop\rag bot> python app.py
 Traceback (most recent call last):
-  File "C:\Users\Equi-PC\Desktop\rag bot\app.py", line 3, in <module>
-    import fitz
-  File "C:\Users\Equi-PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\fitz\__init__.py", line 1, in <module>
-    from frontend import *
-  File "C:\Users\Equi-PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\frontend\__init__.py", line 1, in <module>        
-    from .events import *
-  File "C:\Users\Equi-PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\frontend\events\__init__.py", line 1, in <module> 
-    from .clipboard import *
-  File "C:\Users\Equi-PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\frontend\events\clipboard.py", line 2, in <module>
-    from ..dom import Event
-  File "C:\Users\Equi-PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\frontend\dom.py", line 439, in <module>
-    from . import dispatcher
-  File "C:\Users\Equi-PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\frontend\dispatcher.py", line 15, in <module>
-    from . import config, server
-  File "C:\Users\Equi-PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\frontend\server.py", line 24, in <module>
-    app.mount(config.STATIC_ROUTE, StaticFiles(directory=config.STATIC_DIRECTORY), name=config.STATIC_NAME)
-                                   ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Equi-PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\starlette\staticfiles.py", line 56, in __init__
-    raise RuntimeError(f"Directory '{directory}' does not exist")
-RuntimeError: Directory 'static/' does not exist
+  File "C:\Users\Equi-PC\Desktop\rag bot\app.py", line 5, in <module>
+    from docx import Document
+  File "C:\Users\Equi-PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\docx.py", line 30, in <module>
+    from exceptions import PendingDeprecationWarning
+ModuleNotFoundError: No module named 'exceptions'
+PS C:\Users\Equi-PC\Desktop\rag bot> pip install exceptions
