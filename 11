@@ -1,13 +1,1 @@
-# AFTER THE FIX
 
-for table in tables:
-    cleaned_rows = []
-    # Iterate through each row of the table
-    for row in table:
-        # Convert each cell to a string, replacing any None with ""
-        cleaned_row = ["" if cell is None else str(cell) for cell in row]
-        cleaned_rows.append(", ".join(cleaned_row))
-    
-    # Join the cleaned rows to form the final table string
-    table_str = "\n".join(cleaned_rows)
-    table_texts.append(table_str)
